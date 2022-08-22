@@ -18,6 +18,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
   print("We have logged in as {0.user}".format(client))
+  myLoop.start()
 
 @tasks.loop(seconds=20)
 async def myLoop():
@@ -25,7 +26,7 @@ async def myLoop():
   await channel.send(random.choice(weather.the_weather))
   
   
-myLoop.start()
+
   
 client.run(my_secret)
   
