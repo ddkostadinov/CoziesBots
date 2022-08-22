@@ -25,7 +25,7 @@ async def myLoop():
   await channel.send(random.choice(weather.the_weather))
   
   
-
+myLoop.start()
   
 client.run(my_secret)
   
