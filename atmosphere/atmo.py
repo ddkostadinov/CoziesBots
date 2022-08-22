@@ -5,7 +5,7 @@ import asyncio
 import time
 import weather
 import random
-
+from discord.ext import tasks
 
 
 time_to_wait = datetime.datetime.now
@@ -19,15 +19,15 @@ client = discord.Client(intents=intents)
 async def on_ready():
   print("We have logged in as {0.user}".format(client))
 
-@client.event
-async def on_message(message):
-  time.sleep(20)
-  await message.channel.send(random.choice(weather.the_weather))
-  time.sleep(20)
+@tasks.loop(seconds=20)
+async def myLoop():
+  channel = client.get_channel(989451180843352114)
+  await channel.send(random.choice(weather.the_weather))
+  
   
 
   
 client.run(my_secret)
   
 
-P = 5 
+
