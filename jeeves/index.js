@@ -9,9 +9,8 @@ const random_greetings = greeting[Math.floor(Math.random() * greeting.length)];
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const BotId = 'OTg4ODIwMDU4Mzg4MTk3NDA2.Gb0vIX.lzqj3De39vW-R-c-Xc38ZwKY3EAOnDc_bjFi8Q'
-const MyTestChannel = process.env['Channel_test']
-const AndrewChannel = process.env['channel_andrew']
-const CozyChannel = '989450735542484992'
+
+const CozyChannel = '982234712892379148'
 
 function random() {
   return greeting[Math.floor(Math.random() * greeting.length)]
