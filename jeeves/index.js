@@ -59,7 +59,7 @@ client.on("messageCreate", async message => {
         const cmd = message.content
         
         if(cmd == '!callvalet' && message.author.tag == 'djakozz#7269') {
-         await client.channels.cache.get(CozyChannel).send({ content: 'You can speak with Jeeves when you click the button', components: [new_button]});
+         await client.channels.cache.get(CozyChannel).send({ content: 'Need directions? You can speak to Jeeves, our very own robot-valet.', components: [new_button]});
         }
 });
 
