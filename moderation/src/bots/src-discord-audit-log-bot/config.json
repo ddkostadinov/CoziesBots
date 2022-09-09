@@ -1,0 +1,13 @@
+[
+  {
+    "defaultColor": "BLURPLE",
+    "positiveColor": "#3498DB",
+    "neutralColor": "#E67E22",
+    "negativeColor": "#E91E63",
+    "deleteTimeThreshold": 1,
+    "updateTimeThreshold": 0,
+    "guildId": "988722176603586600",
+    "logChannelId": "1017807464722346075",
+    "ignoreChannelIds": ["1015349649940426804","1015339030956748810","1015258976016937051","1015245003875942420","997411410806046842","989450860465643560","989450735542484992","989452032018628620"]
+  }
+]
