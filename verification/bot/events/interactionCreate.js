@@ -1,6 +1,7 @@
 const { MessageActionRow, Modal, TextInputComponent } = require("discord.js");
 module.exports = async (client, interaction) => {
   const Assigned_Role = "998073542975434763";
+  const Citizen_Role = '1019135734172635137';
   if (interaction.customId === "verify") {
     if (!interaction.member.roles.cache.has(Assigned_Role)) {
       const modal = new Modal()
@@ -35,6 +36,8 @@ module.exports = async (client, interaction) => {
       await interaction.deferReply({ ephemeral: true });
       let member = interaction.guild.members.cache.get(interaction.user.id);
       member.roles.add(Assigned_Role);
+      member.roles.remove(Citizen_Role);
+      
       interaction.followUp({
         content:
           "The train doors slide open.... you are now in the Cozies world.",
