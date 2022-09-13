@@ -1,4 +1,4 @@
 module.exports = async (client, member) => {
-    member.roles.add('998073542975434763')
+    member.roles.add('1019135734172635137')
     return;
 };
