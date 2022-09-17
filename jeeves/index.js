@@ -63,7 +63,7 @@ const row = new MessageActionRow()
             value: 'fifth_option',
           },
           {
-            label: 'Hey, Jeeves.. Are you… uhh.. Okay? **(QUEST)**',
+            label: 'Hey, Jeeves.. Are you… uhh.. Okay? (QUEST)',
             value: 'sixth_option',
           },
                   ])
@@ -130,7 +130,7 @@ client.on('interactionCreate', async click => {
       else if(click.customId == 'event_button') {
         if(!click.member.roles.cache.has(CouplerRole)) {
           
-          await click.reply({ content: '*You carefully grab the wire with the tip of your fingers and put it back into place. Jeeves sighs deeply, releasing a burst of steam from a few unlikely places.*\n\n***“This never happened, right?”*** *Reaching into a small pocket, Jeeves produces a small golden badge with the word <@&1012665919996178523> engraved onto it.* ***“This is a token of my gratitude. If anyone asks, you found it on the ground, capiche?”***', ephemeral: [true] });
+          await click.reply({ content: '*You carefully grab the wire with the tip of your fingers and put it back into place. Jeeves sighs deeply, releasing a burst of steam from a few unlikely places.*\n\n***“This never happened, right?”*** *Reaching into a small pocket, Jeeves produces a small golden badge with the word <@&1019184419233341460> engraved onto it.* ***“This is a token of my gratitude. If anyone asks, you found it on the ground, capiche?”***', ephemeral: [true] });
           let member = click.guild.members.cache.get(click.user.id);
           member.roles.add(CouplerRole);
         }
