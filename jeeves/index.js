@@ -8,7 +8,7 @@ const { Client, Intents } = require('discord.js');
 const random_greetings = greeting[Math.floor(Math.random() * greeting.length)];
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
-const BotId = 'OTg4ODIwMDU4Mzg4MTk3NDA2.Gb0vIX.lzqj3De39vW-R-c-Xc38ZwKY3EAOnDc_bjFi8Q'
+const BotId = 'OTg4ODIwMDU4Mzg4MTk3NDA2.GV-XOP.cX87FXbrIz7GIhqDSwZbar8fozffYT26rJ4BSM'
 
 const CozyChannel = '989450735542484992'
 
