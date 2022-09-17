@@ -15,6 +15,7 @@ const CozyChannel = '989450735542484992'
 const CouplerRole = '1019184419233341460' //EventRole test_server role id =  1012641196788686868
 const ticketRole_1 = '1011659799060029470' // Novice
 const ticketRole_2 = '1020639411819520023' // Journeyman
+const ticketRole_3 = '1020639942793252934' // Adventurer
 
 function random() {
   return greeting[Math.floor(Math.random() * greeting.length)]
@@ -102,7 +103,7 @@ client.on('interactionCreate', async click => {
       }
           else if(value === 'sixth_option') {
             const passenger = click.member.roles.cache
-            if(passenger.has(ticketRole_1) || passenger.has(ticketRole_2)) {
+            if(passenger.has(ticketRole_1) || passenger.has(ticketRole_2) || passenger.has(ticketRole_3)) {
               if(passenger.has(CouplerRole)) {
                 await click.reply({ content: '*Jeeves raises an eyebrow.* ***“What are you talking about, Cozy? Feeling extraordinary. Beautiful badge, by the way.”***', ephemeral: [true] });
               }
