@@ -76,12 +76,12 @@ const generateImage = async (member) => {
     // draw in the username
     
     ctx.font = applyText(canvas, nametoUpper)
-    ctx.fillText(nametoUpper, dim.width - 540, dim.height - dim.margin - 205 )
+    ctx.fillText(nametoUpper, dim.width - 540, dim.height - dim.margin - 213 )
 
     ctx.fillStyle = "#60AAD9"
     ctx.textAlign = "center"
 
-    ctx.font = "bold 24pt Kollektif"
+    ctx.font = "bold 2pt Kollektif"
     ctx.fillText(twitter, dim.width - 522.5, dim.height - dim.margin - 134 )
 
 
