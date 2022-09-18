@@ -78,31 +78,31 @@ client.on('interactionCreate', async click => {
         // different background options
         else if(click.customId == 'yellow_button') { 
             await click.showModal(components.modal);
-            bg = "https://i.imgur.com/hHxVaXc.png";
+            bg = "https://i.imgur.com/JqZBf6n.png";
             exports.bg = bg;
           }
         
         else if(click.customId == 'sky_blue_button') { 
             await click.showModal(components.modal);
-            bg = "https://i.imgur.com/jf23qVl.png";
+            bg = "https://i.imgur.com/h7xSHE4.png";
             exports.bg = bg;
           }
         
         else if(click.customId == 'pink_button') { 
             await click.showModal(components.modal);
-            bg = "https://i.imgur.com/r0cvOzs.png";
+            bg = "https://i.imgur.com/El5TgmJ.png";
             exports.bg = bg;
           }
         
         else if(click.customId == 'purple_button') { 
             await click.showModal(components.modal);
-            bg = "https://i.imgur.com/7GNnsRR.png";
+            bg = "https://i.imgur.com/FJKBO3k.png";
             exports.bg = bg;
           }
         
         else if(click.customId == 'ocean_blue_button') { 
             await click.showModal(components.modal);
-            bg = "https://i.imgur.com/VRUY7xr.png";
+            bg = "https://i.imgur.com/7pLz7fp.png";
             exports.bg = bg;
           }
     }
@@ -111,10 +111,11 @@ client.on('interactionCreate', async click => {
         
         const name_response = click.fields.getTextInputValue("nameInput");
         const twitter_response = click.fields.getTextInputValue("twitterInput");
+        let member = click.guild.members.cache.get(click.user.id);
         exports.name_response = name_response
         exports.twitter_response = twitter_response
 
-        let member = click.guild.members.cache.get(click.user.id);
+        
         console.log("infrontof img")
         const img = await generateImage(member);
         
