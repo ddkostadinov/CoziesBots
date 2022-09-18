@@ -81,7 +81,7 @@ const generateImage = async (member) => {
     ctx.fillStyle = "#60AAD9"
     ctx.textAlign = "center"
 
-    ctx.font = "bold 28pt Kollektif"
+    ctx.font = "bold 24pt Kollektif"
     ctx.fillText(twitter, dim.width - 522.5, dim.height - dim.margin - 134 )
 
 
