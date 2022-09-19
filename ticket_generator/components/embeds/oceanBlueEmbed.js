@@ -1,11 +1,11 @@
 const { EmbedBuilder } = require("discord.js")
 
 
-const yellowEmbed = new EmbedBuilder()
+const oceanBlueEmbed = new EmbedBuilder()
 		.setColor(0x0099FF)
 
 		.setAuthor({ name: 'COZ-135 ID CARD GENERATOR', iconURL: 'https://i.imgur.com/cgprakZ.png', url: 'https://cozies.io' })
-		.setDescription('Background set to: **YELLOW**')
+		.setDescription('Background set to: **OCEAN BLUE**')
     /*
 	.addFields(
 		{ name: 'BACKGROUND', value: 'Choose your background: yellow, blue or red' },
@@ -19,4 +19,4 @@ const yellowEmbed = new EmbedBuilder()
 	//.setFooter({ text: 'example card', iconURL: 'https://i.imgur.com/cgprakZ.png' });
 
 
-module.exports = yellowEmbed;
+module.exports = oceanBlueEmbed;

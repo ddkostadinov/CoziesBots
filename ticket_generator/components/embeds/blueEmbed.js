@@ -2,12 +2,10 @@ const { EmbedBuilder } = require("discord.js")
 
 
 const blueEmbed = new EmbedBuilder()
-    .setColor(0x0099FF)
-    .setTitle('BACKGROUND')
+        .setColor(0x0099FF)
 
-    .setAuthor({ name: 'COZY CARD CREATOR', iconURL: 'https://i.imgur.com/cgprakZ.png'}) //, url: 'https://discord.js.org' })
-    .setDescription('SET TO BLUE')
-    .setThumbnail('https://i.imgur.com/cgprakZ.png')
+        .setAuthor({ name: 'COZ-135 ID CARD GENERATOR', iconURL: 'https://i.imgur.com/cgprakZ.png', url: 'https://cozies.io' })
+        .setDescription('Background set to: **SKY BLUE**')
     /*
     .addFields(
         { name: 'BACKGROUND', value: 'Choose your background: yellow, blue or red' },

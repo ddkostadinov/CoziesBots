@@ -18,7 +18,7 @@ const nameInput = new TextInputBuilder()
 
 const twitterInput = new TextInputBuilder()
     .setCustomId('twitterInput')
-    .setLabel("Enter your Twitter handle?")
+    .setLabel("Enter your Twitter handle")
     .setMinLength(1)
     .setMaxLength(16)
     .setPlaceholder("Twitter Handle")

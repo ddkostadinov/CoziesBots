@@ -9,9 +9,12 @@ const purple_button = require("./buttons/button_purple");
 const row = require('./selectMenu/selectMenu');
 const modal = require('./modal/modal');
 const instructionEmbed = require('./embeds/instructionEmbed');
-const redEmbed = require('./embeds/redEmbed');
+const pinkEmbed = require('./embeds/redEmbed');
 const yellowEmbed = require('./embeds/yellowEmbed');
 const blueEmbed = require('./embeds/blueEmbed');
+const oceanBlueEmbed = require('./embeds/oceanBlueEmbed');
+const purpleEmbed = require('./embeds/purpleEmbed');
+const loggingEmbed = require('./embeds/logEmbed');
 
 
-module.exports = {button, yellow_button, sky_blue_button, pink_button, ocean_blue_button, purple_button, row, modal, instructionEmbed,redEmbed,yellowEmbed,blueEmbed}
+module.exports = {button, yellow_button, sky_blue_button, pink_button, ocean_blue_button, purple_button, row, modal, instructionEmbed,pinkEmbed,yellowEmbed,blueEmbed,oceanBlueEmbed,purpleEmbed, loggingEmbed}

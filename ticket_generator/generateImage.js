@@ -39,9 +39,7 @@ const generateImage = async (member) => {
     let twitter = colorbg.twitter_response
     const nametoUpper = name.toUpperCase()
 
-    console.log(member.user.displayAvatarURL())
     let avatarURL = member.user.displayAvatarURL({extension: "png", dynamic: false, size: av.size})
-    console.log(avatarURL)
 
     const canvas = Canvas.createCanvas(dim.width, dim.height)
     const ctx = canvas.getContext("2d")
@@ -81,7 +79,7 @@ const generateImage = async (member) => {
     ctx.fillStyle = "#60AAD9"
     ctx.textAlign = "center"
 
-    ctx.font = "bold 2pt Kollektif"
+    ctx.font = "bold 24pt Kollektif"
     ctx.fillText(twitter, dim.width - 522.5, dim.height - dim.margin - 134 )
 
 

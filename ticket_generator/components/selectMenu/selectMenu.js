@@ -4,30 +4,30 @@ const row = new ActionRowBuilder()
 .addComponents(
     new SelectMenuBuilder()
         .setCustomId('selectbg')
-        .setPlaceholder('Nothing selected')
+        .setPlaceholder('No color selected yet')
         .addOptions(
             {
-                label: 'SKY BLUE BACKGROUND',
+                label: 'Sky blue',
                 
                 value: 'first_option',
             },
             {
-                label: 'YELLOW BACKGROUND',
+                label: 'Yellow',
                 
                 value: 'second_option',
             },
             {
-                label: 'PINK BACKGROUND',
+                label: 'Pink',
                 
                 value: 'third_option',
             },
             {
-                label: 'PURPLE BACKGROUND',
+                label: 'Purple',
                 
                 value: 'fourth_option',
             },
             {
-                label: 'OCEAN BLUE BACKGROUND',
+                label: 'Ocean blue',
                 
                 value: 'fifth_option',
             }
