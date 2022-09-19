@@ -6,7 +6,8 @@ require("dotenv").config()
 
 const components = require("./components/components")
 
-const welcomeChannelId = "1019986713545809940"
+const cardChannel = "1021453668500906094"
+const loggingChannel = "1021454453083226112"
 
 const client = new Discord.Client({
 	intents: [
@@ -28,7 +29,7 @@ client.on("ready", () => {
 client.on("messageCreate", async message => {
     const cmd = message.content;
     if(cmd == '!callgenerator' && message.author.tag == 'djakozz#7269') {
-        await client.channels.cache.get(welcomeChannelId).send({ embeds: [components.instructionEmbed], components: [components.button]});
+        await client.channels.cache.get(cardChannel).send({ embeds: [components.instructionEmbed], components: [components.button]});
     }
 })
 
@@ -118,7 +119,7 @@ client.on('interactionCreate', async click => {
 
         // logging info of user
         const logged = components.loggingEmbed(member)
-        client.channels.cache.get(welcomeChannelId).send({ embeds: [logged] })
+        client.channels.cache.get(loggingChannel).send({ embeds: [logged] })
 
         // generating banner
         const img = await generateImage(member);
