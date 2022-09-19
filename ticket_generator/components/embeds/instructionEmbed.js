@@ -5,7 +5,7 @@ const instructionEmbed = new EmbedBuilder()
 	.setColor(0x0099FF)
 	.setTitle('INSTRUCTION MANUAL')
 	
-	.setAuthor({ name: 'COZ-135 ID CARD GENERATOR', iconURL: 'https://i.imgur.com/cgprakZ.png', url: 'https://cozies.io' })
+	.setAuthor({ name: 'COZ-135 ID CARD GENERATOR', iconURL: 'https://i.imgur.com/VRUY7xr.png', url: 'https://cozies.io' })
 	.setDescription('Follow the steps below to create your very own Cozy ID Card')
 	.setThumbnail('https://i.imgur.com/cgprakZ.png')
 	.addFields(
