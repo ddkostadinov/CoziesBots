@@ -13,7 +13,7 @@ const BotId = 'OTg4ODIwMDU4Mzg4MTk3NDA2.GV-XOP.cX87FXbrIz7GIhqDSwZbar8fozffYT26r
 const CozyChannel = '989450735542484992'
 
 const CouplerRole = '1019184419233341460' //EventRole test_server role id =  1012641196788686868
-const questRole = ['1011659799060029470', '1020639411819520023', '1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374'] // novice, journeyman, adventurer, trainspotting, alpha, artisan
+const questRole = ['1011659799060029470', '1020639411819520023', '1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', 'No role'] // novice, journeyman, adventurer, trainspotting, alpha, artisan
 
 function random() {
   return greeting[Math.floor(Math.random() * greeting.length)]
@@ -113,7 +113,7 @@ client.on('interactionCreate', async click => {
                 }
               }
 
-              else {
+              else if (questRole[i] == 'No role') {
                 await click.reply({ content: '***"I seem to be malfunctioning, passenger. Only a Ticket Holder has the necessary skill set to assist me..."***', ephemeral: [true] });
               }
             }
