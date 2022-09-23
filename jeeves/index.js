@@ -13,9 +13,7 @@ const BotId = 'OTg4ODIwMDU4Mzg4MTk3NDA2.GV-XOP.cX87FXbrIz7GIhqDSwZbar8fozffYT26r
 const CozyChannel = '989450735542484992'
 
 const CouplerRole = '1019184419233341460' //EventRole test_server role id =  1012641196788686868
-const ticketRole_1 = '1011659799060029470' // Novice
-const ticketRole_2 = '1020639411819520023' // Journeyman
-const ticketRole_3 = '1020639942793252934' // Adventurer
+const questRole = ['1011659799060029470', '1020639411819520023', '1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374'] // novice, journeyman, adventurer, trainspotting, alpha, artisan
 
 function random() {
   return greeting[Math.floor(Math.random() * greeting.length)]
@@ -43,6 +41,10 @@ const row = new MessageActionRow()
 				.setMaxValues(1)
 				.addOptions([
           {
+            label: 'Hey, Jeeves.. Are you… uhh.. Okay? (QUEST)',
+            value: 'sixth_option',
+          },
+          {
 						label: 'Who are you?',
 						value: 'first_option',
           },
@@ -61,11 +63,8 @@ const row = new MessageActionRow()
           {
             label: 'Could you tell me the etiquette on board again?',
             value: 'fifth_option',
-          },
-          {
-            label: 'Hey, Jeeves.. Are you… uhh.. Okay? (QUEST)',
-            value: 'sixth_option',
-          },
+          }
+          
                   ])
     );
 
@@ -103,19 +102,22 @@ client.on('interactionCreate', async click => {
       }
           else if(value === 'sixth_option') {
             const passenger = click.member.roles.cache
-            if(passenger.has(ticketRole_1) || passenger.has(ticketRole_2) || passenger.has(ticketRole_3)) {
-              if(passenger.has(CouplerRole)) {
-                await click.reply({ content: '*Jeeves raises an eyebrow.* ***“What are you talking about, Cozy? Feeling extraordinary. Beautiful badge, by the way.”***', ephemeral: [true] });
-              }
-              else {
-              await click.reply({ content: '***”Do I lo-look okay-ywf?"***\n\n*Jeeves’ face spazzes out. An array of 1s and 0s drips down his screen, not unlike sweat. He appears to be in pain, at least to the degree that a robot can feel.*\n\n***”I’m not too-t proud to ask fe-er assistance, so could you lend a hand heZere? This-is-is wire here above my processor seems-sm to have fallen out of pl-place - a flaw in code, I assurerrrr you - and now I’m, uuh, well you can see.I need a fix - there’s, uh, stuff to be done around here… Helloooo.”***', components: [event_button], ephemeral: true});
-              }
-            }
+            for (let i = 0; i < questRole.length; i++) {
 
-            else {
-              await click.reply({ content: '***"I seem to be malfunctioning, passenger. Only a Ticket Holder has the necessary skill set to assist me..."***', ephemeral: [true] });
+              if(passenger.has(questRole[i])) {
+                if(passenger.has(CouplerRole)) {
+                  await click.reply({ content: '*Jeeves raises an eyebrow.* ***“What are you talking about, Cozy? Feeling extraordinary. Beautiful badge, by the way.”***', ephemeral: [true] });
+                }
+                else {
+                await click.reply({ content: '***”Do I lo-look okay-ywf?"***\n\n*Jeeves’ face spazzes out. An array of 1s and 0s drips down his screen, not unlike sweat. He appears to be in pain, at least to the degree that a robot can feel.*\n\n***”I’m not too-t proud to ask fe-er assistance, so could you lend a hand heZere? This-is-is wire here above my processor seems-sm to have fallen out of pl-place - a flaw in code, I assurerrrr you - and now I’m, uuh, well you can see.I need a fix - there’s, uh, stuff to be done around here… Helloooo.”***', components: [event_button], ephemeral: true});
+                }
+              }
+
+              else {
+                await click.reply({ content: '***"I seem to be malfunctioning, passenger. Only a Ticket Holder has the necessary skill set to assist me..."***', ephemeral: [true] });
+              }
             }
-      }
+          }
         }
       
     }
