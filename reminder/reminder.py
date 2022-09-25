@@ -23,7 +23,7 @@ async def on_ready():
   print("We have logged in as {0.user}".format(client))
   myLoop.start()
 
-@tasks.loop(minutes=40)
+@tasks.loop(hours=1)
 async def myLoop():
   channel = client.get_channel(989451180843352114) 
   await channel.send(random.choice(copies))
