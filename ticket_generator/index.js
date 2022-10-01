@@ -9,6 +9,8 @@ const components = require("./components/components")
 const cardChannel = "1021453668500906094"
 const loggingChannel = "1021454453083226112"
 
+const questRole = ['1011659799060029470', '1020639411819520023', '1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', '1025040571334660196', '1025039676723187763', 'No role'] // novice, journeyman, adventurer, trainspotting, alpha, artisan, expert, voyager
+
 const client = new Discord.Client({
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -70,10 +72,21 @@ client.on('interactionCreate', async click => {
       
     if(click.isButton()) {
         if(click.customId == 'main_button') { 
+            const passenger = click.member.roles.cache
+            for (let i = 0; i < questRole.length; i++) {
+
+              if(passenger.has(questRole[i])) {
+                await click.reply({content: "Please select a background color", components: [components.row], ephemeral: true})
+              }
+
+              else if (questRole[i] == 'No role') {
+                await click.reply({ content: '***Only an Adventurer or above can interact with the machine***', ephemeral: [true] });
+              }
+            }
             let member = click.guild.members.cache.get(click.user.id);
             
             // await client.channels.cache.get(welcomeChannelId).send(member);
-            await click.reply({content: "Please select a background color", components: [components.row], ephemeral: true})
+            
         }
   
         // different background options
