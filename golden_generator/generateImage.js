@@ -7,14 +7,14 @@ let background = "bgto"
 
 const applyText = (canvas, text) => {
 	const context = canvas.getContext('2d');
-	let fontSize = 40;
+	let fontSize = 45;
 
 	do {
-		context.font = `${fontSize -= 10}pt Futura-CondensedLight`;
+		context.font = `${fontSize -= 10}pt Futura MdCn BT`;
 	} while (context.measureText(text).width > canvas.width - 300);
 
     if (text.length >= 14) {
-        context.font = `${fontSize -= 3}pt Futura-CondensedLight`;
+        context.font = `${fontSize -= 3}pt Futura MdCn BT`;
     }
 	return context.font;
 };
