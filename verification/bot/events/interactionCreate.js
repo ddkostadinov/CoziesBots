@@ -24,7 +24,7 @@ module.exports = async (client, interaction) => {
     } else {
       await interaction.deferReply({ ephemeral: true });
       interaction.editReply({
-        content: "It seems like you are already on the train... exploring.....",
+        content: "It seems like you are already on the platform... exploring.....",
         ephemeral: true,
       });
     }
@@ -40,7 +40,7 @@ module.exports = async (client, interaction) => {
       
       interaction.followUp({
         content:
-          "The train doors slide open.... you are now in the Cozies world.",
+          "The platform doors slide open.... you are now in the Cozies world.",
         ephemeral: true,
       });
     } else {

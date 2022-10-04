@@ -13,7 +13,7 @@ const BotId = 'OTg4ODIwMDU4Mzg4MTk3NDA2.GV-XOP.cX87FXbrIz7GIhqDSwZbar8fozffYT26r
 const CozyChannel = '989450735542484992'
 
 const CouplerRole = '1019184419233341460' //EventRole test_server role id =  1012641196788686868
-const questRole = ['1011659799060029470', '1020639411819520023', '1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', 'No role'] // novice, journeyman, adventurer, trainspotting, alpha, artisan
+const questRole = ['1011659799060029470', '1020639411819520023', '1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', 'No role'] // novice, journeyman, adventurer, trainspotting, alpha, artisan FOR EVENT (CANCELLED)
 
 function random() {
   return greeting[Math.floor(Math.random() * greeting.length)]
@@ -25,11 +25,7 @@ const main_button = new MessageActionRow()
 					            .setLabel('Talk to Jeeves')
 					            .setStyle('PRIMARY'),);
 
-const event_button = new MessageActionRow()
-        .addComponents(new MessageButton()
-                      .setCustomId('event_button')
-                      .setLabel('Help Jeeves')
-                      .setStyle('SUCCESS'),);
+
 
 
 
@@ -40,10 +36,6 @@ const row = new MessageActionRow()
 				.setMinValues(1)
 				.setMaxValues(1)
 				.addOptions([
-          {
-            label: 'Hey, Jeeves.. Are you… uhh.. Okay? (QUEST)',
-            value: 'sixth_option',
-          },
           {
 						label: 'Who are you?',
 						value: 'first_option',
@@ -100,24 +92,7 @@ client.on('interactionCreate', async click => {
           else if(value === 'fifth_option') {
           await click.reply({ content: "Ettiquette requires you to be civil and respectful to your fellow passengers.\n\nOne must NOT yell (spam) or hang posters (self-promote & shill) on The Platform outside of designated areas.\n\nNo obscene or NSFW content is allowed on The Platform.\n\nAnd please, if you notice something unusual or uncomfortable on The Platform, inform us. The Train Staff is always happy to help.", ephemeral: true});
       }
-          else if(value === 'sixth_option') {
-            const passenger = click.member.roles.cache
-            for (let i = 0; i < questRole.length; i++) {
-
-              if(passenger.has(questRole[i])) {
-                if(passenger.has(CouplerRole)) {
-                  await click.reply({ content: '*Jeeves raises an eyebrow.* ***“What are you talking about, Cozy? Feeling extraordinary. Beautiful badge, by the way.”***', ephemeral: [true] });
-                }
-                else {
-                await click.reply({ content: '***”Do I lo-look okay-ywf?"***\n\n*Jeeves’ face spazzes out. An array of 1s and 0s drips down his screen, not unlike sweat. He appears to be in pain, at least to the degree that a robot can feel.*\n\n***”I’m not too-t proud to ask fe-er assistance, so could you lend a hand heZere? This-is-is wire here above my processor seems-sm to have fallen out of pl-place - a flaw in code, I assurerrrr you - and now I’m, uuh, well you can see.I need a fix - there’s, uh, stuff to be done around here… Helloooo.”***', components: [event_button], ephemeral: true});
-                }
-              }
-
-              else if (questRole[i] == 'No role') {
-                await click.reply({ content: '***"I seem to be malfunctioning, passenger. Only a Ticket Holder has the necessary skill set to assist me..."***', ephemeral: [true] });
-              }
-            }
-          }
+          
         }
       
     }
@@ -129,17 +104,6 @@ client.on('interactionCreate', async click => {
         await click.reply({ content: random(), components: [row], ephemeral: [true] });
       }
       
-      else if(click.customId == 'event_button') {
-        if(!click.member.roles.cache.has(CouplerRole)) {
-          
-          await click.reply({ content: '*You carefully grab the wire with the tip of your fingers and put it back into place. Jeeves sighs deeply, releasing a burst of steam from a few unlikely places.*\n\n***“This never happened, right?”*** *Reaching into a small pocket, Jeeves produces a small golden badge with the word <@&1019184419233341460> engraved onto it.* ***“This is a token of my gratitude. If anyone asks, you found it on the ground, capiche?”***', ephemeral: [true] });
-          let member = click.guild.members.cache.get(click.user.id);
-          member.roles.add(CouplerRole);
-        }
-        else {
-          await click.reply({ content: '*Jeeves raises an eyebrow.* ***“What are you talking about, Cozy? Feeling extraordinary. Beautiful badge, by the way.”***', ephemeral: [true] });
-        }
-      }
     }
     
   
