@@ -6,7 +6,7 @@ require("dotenv").config()
 
 const components = require("./components/components")
 
-const cardChannel = "1015560379839029328"
+const cardChannel = "1027224746552721499"
 // const loggingChannel = "1021454453083226112"
 
 const client = new Discord.Client({
@@ -28,8 +28,8 @@ client.on("ready", () => {
 
 client.on("messageCreate", async message => {
     const cmd = message.content;
-    if(cmd == '!callgolden' && message.author.tag == 'djakozz#7269') {
-        await client.channels.cache.get(cardChannel).send({ content: "Create a golden ticket", components: [components.button]});
+    if(cmd == '!callnormal' && message.author.tag == 'djakozz#7269') {
+        await client.channels.cache.get(cardChannel).send({ content: "Create a ticket", components: [components.button]});
     }
 })
 
@@ -41,7 +41,7 @@ client.on('interactionCreate', async click => {
         if(click.customId == 'main_button') { 
             let member = click.guild.members.cache.get(click.user.id);
 
-            bg = "https://i.imgur.com/qyYAlJK.png";
+            bg = "https://i.imgur.com/KRtDiwS.png";
             exports.bg = bg;
 
             

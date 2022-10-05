@@ -7,7 +7,7 @@ let background = "bgto"
 
 const applyText = (canvas, text) => {
 	const context = canvas.getContext('2d');
-	let fontSize = 41;
+	let fontSize = 44;
 
 	do {
 		context.font = `bold ${fontSize -= 10}pt Futura MdCn BT`;
@@ -49,17 +49,15 @@ const generateImage = async (member) => {
     ctx.drawImage(backimg, 0, 0)
 
     // write in text
-    ctx.imageSmoothingQuality = 1
-    ctx.shadowOffsetY = 3
-    ctx.shadowColor = "#9E7B29"
-    ctx.fillStyle = "#FFFAD0"
+    
+    ctx.fillStyle = "black" 
     ctx.textAlign = "center"
     
 
     // draw in the username
     
     ctx.font = applyText(canvas, nametoUpper)
-    ctx.fillText(nametoUpper, dim.width - 1160, dim.height - dim.margin - 303 )
+    ctx.fillText(nametoUpper, dim.width - 1160, dim.height - dim.margin - 300 )
 
 
     const attachment = new Discord.AttachmentBuilder(canvas.toBuffer(), "welcome.png")
