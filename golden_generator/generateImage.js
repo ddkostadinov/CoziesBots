@@ -10,11 +10,11 @@ const applyText = (canvas, text) => {
 	let fontSize = 36;
 
 	do {
-		context.font = `bold ${fontSize -= 5}pt Futura MdCn BT`;
+		context.font = `${fontSize -= 5}pt Futura MdCn BT`;
 	} while (context.measureText(text).width > canvas.width - 300);
 
     if (text.length >= 20) {
-        context.font = `bold ${fontSize -= 3}pt Futura MdCn BT`;
+        context.font = `${fontSize -= 3}pt Futura MdCn BT`;
     }
 	return context.font;
 };
