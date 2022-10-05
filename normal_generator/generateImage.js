@@ -7,7 +7,7 @@ let background = "bgto"
 
 const applyText = (canvas, text) => {
 	const context = canvas.getContext('2d');
-	let fontSize = 44;
+	let fontSize = 42;
 
 	do {
 		context.font = `${fontSize -= 10}pt Futura MdCn BT`;
