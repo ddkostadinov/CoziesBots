@@ -7,10 +7,10 @@ let background = "bgto"
 
 const applyText = (canvas, text) => {
 	const context = canvas.getContext('2d');
-	let fontSize = 41;
+	let fontSize = 36;
 
 	do {
-		context.font = `bold ${fontSize -= 10}pt Futura MdCn BT`;
+		context.font = `bold ${fontSize -= 5}pt Futura MdCn BT`;
 	} while (context.measureText(text).width > canvas.width - 300);
 
     if (text.length >= 20) {
@@ -59,7 +59,7 @@ const generateImage = async (member) => {
     // draw in the username
     
     ctx.font = applyText(canvas, nametoUpper)
-    ctx.fillText(nametoUpper, dim.width - 1160, dim.height - dim.margin - 303 )
+    ctx.fillText(nametoUpper, dim.width - 1160, dim.height - dim.margin - 302 )
 
 
     const attachment = new Discord.AttachmentBuilder(canvas.toBuffer(), "welcome.png")
