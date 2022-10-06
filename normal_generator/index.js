@@ -29,7 +29,7 @@ client.on("ready", () => {
 client.on("messageCreate", async message => {
     const cmd = message.content;
     if(cmd == '!callnormal' && message.author.tag == 'djakozz#7269') {
-        await client.channels.cache.get(cardChannel).send({ content: "Create a ticket", components: [components.button]});
+        await client.channels.cache.get(cardChannel).send({ content: "Print your ticket", components: [components.button]});
     }
 })
 
@@ -63,7 +63,7 @@ client.on('interactionCreate', async click => {
         // generating banner
         const img = await generateImage(member);
         click.reply({
-        content: `*Powered by: * **ELECTRICITY**`, ephemeral: true, files: [img]
+        content: `*The machine silently vibrates and prints a ticket directly into your hand. It's still warm.*`, ephemeral: true, files: [img]
         })
 
         
