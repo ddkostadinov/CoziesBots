@@ -7,7 +7,7 @@ require("dotenv").config()
 const components = require("./components/components")
 
 const Wallet = components.walletSchema
-const cardChannel = "1015560379839029328"
+const cardChannel = "1027638335184851014"
 const loggingChannel = "1021454453083226112"
 
 const questRole = ['1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', '1025040571334660196', '1025039676723187763', '1013480942217728090', 'No role'] // adventurer, trainspotting, alpha, artisan, expert, voyager
