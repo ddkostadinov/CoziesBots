@@ -29,7 +29,7 @@ client.on("ready", () => {
 client.on("messageCreate", async message => {
     const cmd = message.content;
     if(cmd == '!callnormal' && message.author.tag == 'djakozz#7269') {
-        await client.channels.cache.get(cardChannel).send({ content: "Print a ticket for you Cozy adventure.", components: [components.button]});
+        await client.channels.cache.get(cardChannel).send({ content: "Print a ticket for your Cozy adventure.", components: [components.button]});
     }
 })
 
