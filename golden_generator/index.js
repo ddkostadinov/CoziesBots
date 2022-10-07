@@ -29,7 +29,7 @@ client.on("ready", () => {
 client.on("messageCreate", async message => {
     const cmd = message.content;
     if(cmd == '!callgolden' && message.author.tag == 'djakozz#7269') {
-        await client.channels.cache.get(cardChannel).send({ content: "Create a golden ticket", components: [components.button]});
+        await client.channels.cache.get(cardChannel).send({ content: "Print your Golden Ticket", components: [components.button]});
     }
 })
 
@@ -63,7 +63,8 @@ client.on('interactionCreate', async click => {
         // generating banner
         const img = await generateImage(member);
         click.reply({
-        content: `*Powered by: * **ELECTRICITY**`, ephemeral: true, files: [img]
+        content: `*The machine glows in an almost blinding yellow radiance. A ticket of gold lands into the palm of your hand.*\n
+        ***The journey begins soon.***`, ephemeral: true, files: [img]
         })
 
         
