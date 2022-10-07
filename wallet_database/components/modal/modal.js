@@ -11,7 +11,7 @@ const emailInput = new TextInputBuilder()
     .setCustomId('emailInput')
     .setLabel("Enter your email")
     .setMinLength(1)
-    .setPlaceholder("email")
+    .setPlaceholder("Email")
     .setMaxLength(50)
     .setStyle(TextInputStyle.Short)
     .setRequired(false);
