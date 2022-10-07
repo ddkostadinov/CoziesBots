@@ -9,7 +9,7 @@ const components = require("./components/components")
 const cardChannel = "1021453668500906094"
 const loggingChannel = "1021454453083226112"
 
-const questRole = ['1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', '1025040571334660196', '1025039676723187763', 'No role'] // adventurer, trainspotting, alpha, artisan, expert, voyager
+const questRole = ['1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', '1025040571334660196', '1025039676723187763', '1026042737465761843', 'No role'] // adventurer, trainspotting, alpha, artisan, expert, voyager
 
 const client = new Discord.Client({
 	intents: [
@@ -77,6 +77,7 @@ client.on('interactionCreate', async click => {
 
               if(passenger.has(questRole[i])) {
                 await click.reply({content: "Please select a background color", components: [components.row], ephemeral: true})
+                return
               }
 
               else if (questRole[i] == 'No role') {
