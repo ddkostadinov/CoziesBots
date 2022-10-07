@@ -63,8 +63,7 @@ client.on('interactionCreate', async click => {
         // generating banner
         const img = await generateImage(member);
         click.reply({
-        content: `*The machine glows in an almost blinding yellow radiance. A ticket of gold lands into the palm of your hand.*\n
-        ***The journey begins soon.***`, ephemeral: true, files: [img]
+        content: `*The machine glows in an almost blinding yellow radiance. A ticket of gold lands into the palm of your hand.*\n***The journey begins soon.***`, ephemeral: true, files: [img]
         })
 
         
