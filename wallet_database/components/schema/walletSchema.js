@@ -7,8 +7,8 @@ const walletSchema = new mongoose.Schema({
     },
     discordTag: mongoose.SchemaTypes.String,
     email: mongoose.SchemaTypes.String,
-    wallet: mongoose.SchemaTypes.String,
+    address: mongoose.SchemaTypes.String,
 
 })
 
-module.exports = mongoose.model('Wallet', walletSchema);
+module.exports = mongoose.model('Addresse', walletSchema);

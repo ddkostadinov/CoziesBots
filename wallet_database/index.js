@@ -10,7 +10,7 @@ const Wallet = components.walletSchema
 const cardChannel = "1027638335184851014"
 const loggingChannel = "1021454453083226112"
 
-const questRole = ['1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', '1025040571334660196', '1025039676723187763', '1013480942217728090', 'No role'] // adventurer, trainspotting, alpha, artisan, expert, voyager
+const questRole = ['1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', '1025040571334660196', '1025039676723187763', '1013480942217728090', '1026042737465761843', 'No role'] // adventurer, trainspotting, alpha, artisan, expert, voyager, golden
 
 const client = new Discord.Client({
 	intents: [
@@ -39,7 +39,7 @@ client.on("ready", async () => {
 client.on("messageCreate", async message => {
     const cmd = message.content;
     if(cmd == '!callwallet' && message.author.tag == 'djakozz#7269') {
-        await client.channels.cache.get(cardChannel).send({ contents: "Enter your email and wallet address", components: [components.button]});
+        await client.channels.cache.get(cardChannel).send({ contents: "Enter your email and shipping address", components: [components.button]});
     }
 })
 
@@ -59,7 +59,7 @@ client.on('interactionCreate', async click => {
               }
 
               else if (questRole[i] == 'No role') {
-                await click.reply({ content: '***Only an Adventurer or above can interact with the machine***', ephemeral: [true] });
+                await click.reply({ content: '***Only a Golden ticket holders can interact with the machine***', ephemeral: [true] });
               }
             }
             
