@@ -88,7 +88,7 @@ client.on('interactionCreate', async click => {
             name: name_response,
             phone: phone_response,
             email: email_response,
-            wallet: wallet_response,
+            address: wallet_response,
             
             
         })
