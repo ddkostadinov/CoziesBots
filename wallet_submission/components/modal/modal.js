@@ -20,7 +20,7 @@ const walletInput = new TextInputBuilder()
     .setCustomId('walletInput')
     .setLabel("Enter your Wallet Address")
     .setMinLength(1)
-    .setMaxLength(1000)
+    .setMaxLength(100)
     .setPlaceholder("Wallet Address")
     
     .setRequired(true)

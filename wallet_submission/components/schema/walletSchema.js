@@ -8,7 +8,7 @@ const walletSchema = new mongoose.Schema({
     discordTag: mongoose.SchemaTypes.String,
     
     email: mongoose.SchemaTypes.String,
-    address: mongoose.SchemaTypes.String,
+    wallet: mongoose.SchemaTypes.String,
     
     
 

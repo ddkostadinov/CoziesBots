@@ -7,10 +7,10 @@ require("dotenv").config()
 const components = require("./components/components")
 
 const Wallet = components.walletSchema
-const cardChannel = "1027627179770654820"
+const cardChannel = "1015560379839029328"
 const loggingChannel = "1021454453083226112"
 
-const questRole = ['1011659799060029470','1021810823062114374','1025040571334660196','1021810356215087235','1020639411819520023','1020639942793252934','1021767511458455572','1021767511458455572','1026042737465761843', 'No role'] // golden
+const questRole = ['1013480942217728090','1011659799060029470','1021810823062114374','1025040571334660196','1021810356215087235','1020639411819520023','1020639942793252934','1021767511458455572','1021767511458455572','1026042737465761843', 'No role'] // golden
 
 const client = new Discord.Client({
 	intents: [
@@ -84,8 +84,10 @@ client.on('interactionCreate', async click => {
         const newWallet = await Wallet.create({
             discordId: click.user.id,
             discordTag: tag,
+            
             email: email_response,
             wallet: wallet_response,
+            
             
         })
 
