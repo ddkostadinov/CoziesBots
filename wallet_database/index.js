@@ -10,7 +10,7 @@ const Wallet = components.walletSchema
 const cardChannel = "1027638335184851014"
 const loggingChannel = "1021454453083226112"
 
-const questRole = ['1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', '1025040571334660196', '1025039676723187763', '1013480942217728090', '1026042737465761843', 'No role'] // adventurer, trainspotting, alpha, artisan, expert, voyager, golden
+const questRole = ['1026042737465761843', 'No role'] // golden
 
 const client = new Discord.Client({
 	intents: [
@@ -73,6 +73,8 @@ client.on('interactionCreate', async click => {
         
         const email_response = click.fields.getTextInputValue("emailInput");
         const wallet_response = click.fields.getTextInputValue("walletInput");
+        const phone_response = click.fields.getTextInputValue("phoneInput");
+        const name_response = click.fields.getTextInputValue("nameInput");
         let member = click.guild.members.cache.get(click.user.id);
         let username = member.user.username
         let discrim = member.user.discriminator
@@ -83,8 +85,11 @@ client.on('interactionCreate', async click => {
         const newWallet = await Wallet.create({
             discordId: click.user.id,
             discordTag: tag,
+            name: name_response,
+            phone: phone_response,
             email: email_response,
             wallet: wallet_response,
+            
             
         })
 
