@@ -18,10 +18,10 @@ const emailInput = new TextInputBuilder()
 
 const walletInput = new TextInputBuilder()
     .setCustomId('walletInput')
-    .setLabel("Enter your Shipping Address")
+    .setLabel("Enter your Wallet Address")
     .setMinLength(1)
     .setMaxLength(1000)
-    .setPlaceholder("Shipping Address")
+    .setPlaceholder("Wallet Address")
     
     .setRequired(true)
     .setStyle(TextInputStyle.Short);

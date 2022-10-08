@@ -10,7 +10,7 @@ const Wallet = components.walletSchema
 const cardChannel = "1027627179770654820"
 const loggingChannel = "1021454453083226112"
 
-const questRole = ['998073542975434763','1026042737465761843', 'No role'] // golden
+const questRole = ['1011659799060029470','1021810823062114374','1025040571334660196','1021810356215087235','1020639411819520023','1020639942793252934','1021767511458455572','1021767511458455572','1026042737465761843', 'No role'] // golden
 
 const client = new Discord.Client({
 	intents: [
@@ -59,7 +59,7 @@ client.on('interactionCreate', async click => {
               }
 
               else if (questRole[i] == 'No role') {
-                await click.reply({ content: '***Only a Golden ticket holders can interact with the machine***', ephemeral: [true] });
+                await click.reply({ content: '***Only a Ticket Holders can interact with the machine***', ephemeral: [true] });
               }
             }
             
