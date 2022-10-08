@@ -18,9 +18,7 @@ client = discord.Client(intents=intents)
 
 copies = ["Welcome new passengers! Feel free to talk to <#989450735542484992> and get some <#1018833627108360242> !\n\nYou can also learn <#1022240251806236825> and learn more about leveling on <#1020710179236479036>\n\nEnjoy your stay on the Cozy Platform! <:cozy_love:1020988755336769557>", "GM <:cozy_candle:1021415114861195337> If you’re new here, you should say hi to <#989450735542484992> and learn <#1022240251806236825> <:cozies:1021414996405653554>\n\nYou can receive cool benefits by leveling - learn more on <#1020710179236479036>\n\nGlad to have you here! <:cozy_love:1020988755336769557>", "New to the Cozy Platform? Make sure to get some <#1018833627108360242> and learn <#1022240251806236825> ~ you can do quests/pursuits. \n\nMore on that on <#1020710179236479036>"]
 
-verify = "Don't forget to submit your wallet to verify your Allowlist here: https://www.superful.xyz/project/cozies-official/wallet_submission/cozies-allowlist-ticket-verification  <:cozies:1021414996405653554> \n\nFor more info, check out the <#989451112593629184> and <#1026854780934565958>"
 
-golden = "We present - The Golden Ticket. Learn more about this legendary ticket at <#1024634617447337984>"
 
 @client.event
 async def on_ready():
