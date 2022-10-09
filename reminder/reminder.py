@@ -34,7 +34,7 @@ async def myLoop():
       
       time.sleep(2)
   
-
+golden = 'PLACEHOLDER'
 @tasks.loop()
 async def myGoldenLoop():
   if time_now().minute == 0 and time_now().second == 1:
