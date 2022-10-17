@@ -1,32 +1,32 @@
-const { ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
+const {
+  ActionRowBuilder,
+  ModalBuilder,
+  TextInputBuilder,
+  TextInputStyle,
+} = require("discord.js");
 
-const modal = new ModalBuilder()
-			.setCustomId('myModal')
-			.setTitle('Information');
+const modal = new ModalBuilder().setCustomId("myModal").setTitle("Information");
 
 // Add components to modal
 
 // Create the text input components
 const emailInput = new TextInputBuilder()
-    .setCustomId('emailInput')
-    .setLabel("Enter your email")
-    .setMinLength(1)
-    .setPlaceholder("Email")
-    .setMaxLength(50)
-    .setStyle(TextInputStyle.Short)
-    .setRequired(false);
+  .setCustomId("emailInput")
+  .setLabel("Enter your email")
+  .setMinLength(1)
+  .setPlaceholder("Email")
+  .setMaxLength(50)
+  .setStyle(TextInputStyle.Short)
+  .setRequired(false);
 
 const walletInput = new TextInputBuilder()
-    .setCustomId('walletInput')
-    .setLabel("Enter your Wallet Address")
-    .setMinLength(1)
-    .setMaxLength(100)
-    .setPlaceholder("Wallet Address")
-    
-    .setRequired(true)
-    .setStyle(TextInputStyle.Short);
-
-
+  .setCustomId("walletInput")
+  .setLabel("Enter your Wallet Address")
+  .setMinLength(1)
+  .setMaxLength(50)
+  .setPlaceholder("Wallet Address")
+  .setRequired(true)
+  .setStyle(TextInputStyle.Short);
 
 // An action row only holds one text input,
 // so you need one action row per text input.

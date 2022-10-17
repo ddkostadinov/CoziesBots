@@ -1,107 +1,117 @@
-const { Client, GatewayIntentBits } = require('discord.js');
-const Discord = require("discord.js")
+const { Client, GatewayIntentBits } = require("discord.js");
+const Discord = require("discord.js");
 
-const mongoose = require("mongoose")
-require("dotenv").config()
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-const components = require("./components/components")
+const components = require("./components/components");
 
-const Wallet = components.walletSchema
-const cardChannel = "1027627179770654820"
-const loggingChannel = "1021454453083226112"
+const Wallet = components.walletSchema;
+const cardChannel = "1031596602940456960";
 
-const questRole = ['1013480942217728090','1011659799060029470','1021810823062114374','1025040571334660196','1021810356215087235','1020639411819520023','1020639942793252934','1021767511458455572','1021767511458455572','1026042737465761843', 'No role'] // golden
+const DiamondRole = [
+  "1031593747353436170", //DTH 1
+  "1031600479702097981", //DTH 2
+  "1031600858217058465", //DTH 3
+  "No role",
+];
+
+const dthSubmitted = [
+  "1031600023022088333", //DTHS 1
+  "1031600659579023446", //DTHS 2
+  "1031601083539263620", //DTHS 3
+];
 
 const client = new Discord.Client({
-	intents: [
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.MessageContent,
-		GatewayIntentBits.GuildMembers,
-	],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
+  ],
 });
-
-
 
 client.on("ready", async () => {
-    await mongoose.connect(process.env.MONGO_URI, {
-        keepAlive: true,
-    }).then((m) => {
-        console.log("Connected to DB");
-    }).catch((err) => console.log(err));
+  await mongoose
+    .connect(process.env.MONGO_URI, {
+      keepAlive: true,
+    })
+    .then((m) => {
+      console.log("Connected to DB");
+    })
+    .catch((err) => console.log(err));
 
-
-    console.log(`Logged in as ${client.user.tag}`)
-})
-
-
-
-client.on("messageCreate", async message => {
-    const cmd = message.content;
-    if(cmd == '!callwallet' && message.author.tag == 'djakozz#7269') {
-        await client.channels.cache.get(cardChannel).send({ contents: "Enter your email and shipping address", components: [components.button]});
-    }
-})
-
-
-client.on('interactionCreate', async click => {
-    
-    
-      
-    if(click.isButton()) {
-        if(click.customId == 'main_button') { 
-            const passenger = click.member.roles.cache
-            for (let i = 0; i < questRole.length; i++) {
-
-              if(passenger.has(questRole[i])) {
-                await click.showModal(components.modal);
-                return
-              }
-
-              else if (questRole[i] == 'No role') {
-                await click.reply({ content: '***Only a Ticket Holders can interact with the machine***', ephemeral: [true] });
-              }
-            }
-            
-            
-        }
-  
-        
-    }
-
-    if (click.customId === "myModal") {
-        
-        const email_response = click.fields.getTextInputValue("emailInput");
-        const wallet_response = click.fields.getTextInputValue("walletInput");
-        
-        let member = click.guild.members.cache.get(click.user.id);
-        let username = member.user.username
-        let discrim = member.user.discriminator
-        let tag = username + '#' + discrim
-        //exports.email_response = email_response
-        //exports.wallet_response = wallet_response
-
-        const newWallet = await Wallet.create({
-            discordId: click.user.id,
-            discordTag: tag,
-            
-            email: email_response,
-            wallet: wallet_response,
-            
-            
-        })
-
-        // message accepted
-        
-        click.reply({
-        content: `*Your information has been saved. Thank you Cozy!*`, ephemeral: true
-        })
-
-        
-
-    }
+  console.log(`Logged in as ${client.user.tag}`);
 });
 
+client.on("messageCreate", async (message) => {
+  const cmd = message.content;
+  if (cmd == "!callwalletsub" && message.author.tag == "djakozz#7269") {
+    await client.channels.cache.get(cardChannel).send({
+      components: [components.button],
+    });
+  }
+});
 
+client.on("interactionCreate", async (click) => {
+  if (click.isButton()) {
+    if (click.customId == "main_button") {
+      const passenger = click.member.roles.cache;
+      for (let i = 0; i < DiamondRole.length; i++) {
+        if (passenger.has(DiamondRole[i])) {
+          await click.showModal(components.modal);
+          return;
+        } else if (DiamondRole[i] == "No role") {
+          await click.reply({
+            content: "***Only a Ticket Holder can interact with the machine***",
+            ephemeral: [true],
+          });
+        }
+      }
+    }
+  }
 
-client.login(process.env.TOKEN)
+  if (click.customId === "myModal") {
+    // All info for database
+    const email_response = click.fields.getTextInputValue("emailInput");
+    const wallet_response = click.fields.getTextInputValue("walletInput");
+    let member = click.guild.members.cache.get(click.user.id);
+    let username = member.user.username;
+    let discrim = member.user.discriminator;
+    let tag = username + "#" + discrim;
+
+    // Database schema
+    const newWallet = await Wallet.create({
+      discordId: click.user.id,
+      discordTag: tag,
+      email: email_response,
+      wallet: wallet_response,
+    });
+
+    // Replacing Roles
+
+    const replaceRoles = function (role) {
+      member.roles.add(dthSubmitted[role]);
+      member.roles.remove(DiamondRole[role]);
+    };
+
+    for (let i = 0; i < DiamondRole.length; i++) {
+      if (member.roles.cache.has(DiamondRole[0])) {
+        replaceRoles(0);
+      } else if (member.roles.cache.has(DiamondRole[1])) {
+        replaceRoles(1);
+      } else if (member.roles.cache.has(DiamondRole[2])) {
+        replaceRoles(2);
+      }
+    }
+    // DTH Submitted = 1031600023022088333, DTH = 1031593747353436170
+
+    // message accepted
+    click.reply({
+      content: `*Your information has been saved. Thank you Cozy!*`,
+      ephemeral: true,
+    });
+  }
+});
+
+client.login(process.env.TOKEN);
