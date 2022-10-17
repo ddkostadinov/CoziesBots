@@ -63,7 +63,8 @@ client.on("interactionCreate", async (click) => {
           return;
         } else if (DiamondRole[i] == "No role") {
           await click.reply({
-            content: "***Only a Ticket Holder can interact with the machine***",
+            content:
+              "***Only a Diamond Ticket Holder can interact with this machine***",
             ephemeral: [true],
           });
         }
@@ -108,7 +109,7 @@ client.on("interactionCreate", async (click) => {
 
     // message accepted
     click.reply({
-      content: `*Your information has been saved. Thank you Cozy!*`,
+      content: `*Your information has been saved. Thank you!*`,
       ephemeral: true,
     });
   }

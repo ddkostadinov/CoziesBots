@@ -21,10 +21,10 @@ const emailInput = new TextInputBuilder()
 
 const walletInput = new TextInputBuilder()
   .setCustomId("walletInput")
-  .setLabel("Enter your Wallet Address")
+  .setLabel("Enter your 0x Address")
   .setMinLength(1)
   .setMaxLength(50)
-  .setPlaceholder("Wallet Address")
+  .setPlaceholder("0x Address")
   .setRequired(true)
   .setStyle(TextInputStyle.Short);
 
