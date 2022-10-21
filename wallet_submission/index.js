@@ -59,8 +59,10 @@ client.on("interactionCreate", async (click) => {
       const passenger = click.member.roles.cache;
       for (let i = 0; i < DiamondRole.length; i++) {
         if (passenger.has(DiamondRole[i])) {
-          await click.showModal(components.modal);
-          return;
+          if (!passenger.has(dthSubmitted[0])) {
+            await click.showModal(components.modal);
+            return;
+          }
         } else if (DiamondRole[i] == "No role") {
           await click.reply({
             content:
