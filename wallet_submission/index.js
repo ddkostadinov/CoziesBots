@@ -99,10 +99,6 @@ client.on("interactionCreate", async (click) => {
     for (let i = 0; i < DiamondRole.length; i++) {
       if (member.roles.cache.has(DiamondRole[0])) {
         replaceRoles(0);
-      } else if (member.roles.cache.has(DiamondRole[1])) {
-        replaceRoles(1);
-      } else if (member.roles.cache.has(DiamondRole[2])) {
-        replaceRoles(2);
       }
     }
     // DTH Submitted = 1031600023022088333, DTH = 1031593747353436170
