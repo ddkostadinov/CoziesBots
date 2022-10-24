@@ -1,4 +1,3 @@
-from msilib import sequence
 import os
 from re import T
 import discord
