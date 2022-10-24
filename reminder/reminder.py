@@ -40,7 +40,7 @@ async def myLoop():
 @tasks.loop(time = diamond_dts)
 async def myDiamondLoop():
   channel = client.get_channel(1034170366911840346)  # change after test
-  await channel.send(diamond_copies)
+  await channel.send(diamond_copies[0])
   time.sleep(2)
   
   
