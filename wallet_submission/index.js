@@ -103,7 +103,7 @@ client.on("interactionCreate", async (click) => {
     };
 
     for (let i = 0; i < DiamondRole.length; i++) {
-      if (member.roles.cache.has(DiamondRole[0])) {
+      if (member.roles.cache.has(DiamondRole[i])) {
         replaceRoles(0);
       }
     }
