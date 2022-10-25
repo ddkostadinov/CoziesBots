@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const components = require("./components/components");
 
-const cardChannel = "982234712892379148";
+const cardChannel = "1027224746552721499";
 // const loggingChannel = "1021454453083226112"
 
 const client = new Discord.Client({
