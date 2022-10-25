@@ -19,7 +19,7 @@ t = datetime.time
 
 copies = ["The Diamond Ticket. Trade, reveal or keep it - it's your choice. More about the mint method here: <#1026854780934565958> / Learn how to get whitelisted <#1032246877367840818>"]
 
-diamond_copies = ["<@&1031593747353436170> remember to give your Metamask Ethereum address to <#1031596602940456960>\n\nIf you’d like to level up to get more 💎, do check out <#1032239667346690159>"]
+diamond_copies = ["<@&1031593747353436170> remember to submit your Metamask Ethereum address to <#1031596602940456960>\n\nIf you’d like to level up to get more 💎, do check out <#1032239667346690159>"]
 
 
 dts = [t(1), t(3), t(5), t(7), t(9), t(11), t(13), t(15), t(17), t(19), t(21), t(23)]
