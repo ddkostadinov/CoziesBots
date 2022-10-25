@@ -13,10 +13,11 @@ const questRole = [
   "1031593747353436170",
   "1031600023022088333",
   "1031600479702097981",
-  "1031600659579023446",
   "1031600858217058465",
-  "1031601083539263620",
-  "1026042737465761843",
+  "1033328648448639056",
+  "1032575283703853056",
+  "1031600839221055588",
+  "1031601071744892988",
   "No role",
 ]; // adventurer, trainspotting, alpha, artisan, expert, voyager
 
@@ -38,12 +39,10 @@ client.on("ready", () => {
 client.on("messageCreate", async (message) => {
   const cmd = message.content;
   if (cmd == "!callgenerator" && message.author.tag == "djakozz#7269") {
-    await client.channels.cache
-      .get(cardChannel)
-      .send({
-        embeds: [components.instructionEmbed],
-        components: [components.button],
-      });
+    await client.channels.cache.get(cardChannel).send({
+      embeds: [components.instructionEmbed],
+      components: [components.button],
+    });
   }
 });
 
