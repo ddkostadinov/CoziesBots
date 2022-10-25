@@ -28,7 +28,8 @@ client.on("messageCreate", async (message) => {
   const cmd = message.content;
   if (cmd == "!callnormal" && message.author.tag == "djakozz#7269") {
     await client.channels.cache.get(cardChannel).send({
-      content: "Print a ticket for your Cozy adventure.",
+      content:
+        "Engrave your name into a Diamond Ticket to prepare for your journey! <:diamond_ticket:1032587045404676116>",
       components: [components.button],
     });
   }
@@ -56,7 +57,7 @@ client.on("interactionCreate", async (click) => {
     // generating banner
     const img = await generateImage(member);
     click.reply({
-      content: `*The machine silently vibrates and prints a ticket directly into your hand. It's still warm.*`,
+      content: `*The machine silently vibrates and produces a ticket directly into your hand. Don't cut yourself!*`,
       ephemeral: true,
       files: [img],
     });
