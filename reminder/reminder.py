@@ -17,13 +17,13 @@ client = discord.Client(intents=intents)
 time_now = datetime.datetime.now
 t = datetime.time
 
-copies = ["The Diamond Ticket. Trade, reveal or keep it - it's your choice. More about the mint method here: <#1026854780934565958> / Learn how to get whitelisted <#1032246877367840818>"]
+copies = ["The Diamond Ticket. Trade, reveal or keep it - it's your choice. Mint date and time: **2 Nov, 2022 / 10am EST (Free Mint phase will last 24 hours)**.\n More about the mint method here: <#1026854780934565958> / Learn how to get whitelisted <#1032246877367840818>"]
 
 diamond_copies = ["<@&1031593747353436170> remember to submit your Metamask Ethereum address to <#1031596602940456960>\n\nIf you’d like to level up to get more 💎, do check out <#1032239667346690159>"]
 
 
 dts = [t(1), t(3), t(5), t(7), t(9), t(11), t(13), t(15), t(17), t(19), t(21), t(23)]
-diamond_dts = [ t(1), t(2), t(3), t(4), t(5), t(6), t(7), t(8), t(9), t(10), t(11), t(12), t(13), t(14), t(15), t(16), t(17), t(18), t(19), t(20), t(21), t(22), t(23)]
+diamond_dts = [t(2), t(4), t(6), t(8), t(10), t(12), t(14), t(16), t(18), t(20), t(22)]
 
 @client.event
 async def on_ready():
