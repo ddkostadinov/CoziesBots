@@ -8,9 +8,9 @@ const { Client, Intents } = require('discord.js');
 const random_greetings = greeting[Math.floor(Math.random() * greeting.length)];
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
-const BotId = 'OTg4ODIwMDU4Mzg4MTk3NDA2.GV-XOP.cX87FXbrIz7GIhqDSwZbar8fozffYT26rJ4BSM'
+const BotId = '[insert secret]'
 
-const CozyChannel = '989450735542484992'
+const CozyChannel = '[channel-id]'
 
 const CouplerRole = '1019184419233341460' //EventRole test_server role id =  1012641196788686868
 const questRole = ['1011659799060029470', '1020639411819520023', '1020639942793252934', '1021767511458455572', '1021810356215087235', '1021810823062114374', 'No role'] // novice, journeyman, adventurer, trainspotting, alpha, artisan FOR EVENT (CANCELLED)
