@@ -9,7 +9,7 @@ from discord.ext import tasks
 intents = discord.Intents.default()
 intents.message_content = True
 
-my_secret = 'MTAyMjk1NzY3MDA4MjI5Mzg1MQ.GYGHKl.0qPVInn4Ccs9CdrN2ik6LrvS8bRTPf14loENFo' #change after test
+my_secret = '[insert secret]' #change after test
 client = discord.Client(intents=intents)
 
 
@@ -33,13 +33,13 @@ async def on_ready():
   
 @tasks.loop(time = dts)
 async def myLoop():
-  channel = client.get_channel(989451180843352114)  # change after test
+  channel = client.get_channel('[channel-id]')  # change after test
   await channel.send(random.choice(copies), file=discord.File('./theDiamondTicket.mov'))
   time.sleep(2)
   
 @tasks.loop(time = diamond_dts)
 async def myDiamondLoop():
-  channel = client.get_channel(1034170366911840346)  # change after test
+  channel = client.get_channel('[channel-id]')  # change after test
   await channel.send(diamond_copies[0])
   time.sleep(2)
   
