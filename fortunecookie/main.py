@@ -8,7 +8,7 @@ import random_quotes
 
 intents = discord.Intents.default()
 intents.message_content = True
-my_secret = 'OTg0MDk4NTcwNzc5MTExNDk0.GocJvE.yQEs2rfbB4mLQfCE128okTh1b1cnrxO7q3QcM4'
+my_secret = '[insert secret]'
 client = discord.Client(intents=intents)
 
 
